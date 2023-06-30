@@ -1,3 +1,3 @@
-# Car Hub Application
+# Cars Hub Application
 
 Showcase for all car enthusiasts!
