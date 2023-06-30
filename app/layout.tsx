@@ -1,8 +1,7 @@
-import { Inter } from "next/font/google";
+import NavigationBar from "@/components/NavigationBar";
+import Footer from "@/components/Footer";
 
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Cars Hub Application",
@@ -16,7 +15,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className="relative">
+        <NavigationBar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
