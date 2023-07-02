@@ -15,6 +15,16 @@ export interface CarProps {
   year: number;
 }
 
+export interface CarCardProps {
+  car: CarProps;
+}
+
+export interface CarDetailsProps {
+  isOpen: boolean;
+  closeModal: () => void;
+  car: CarProps;
+}
+
 export interface FilterProps {
   manufacturer?: string;
   year?: number;
@@ -25,16 +35,6 @@ export interface FilterProps {
 
 export interface HomeProps {
   searchParams: FilterProps;
-}
-
-export interface CarCardProps {
-  model: string;
-  make: string;
-  mpg: number;
-  transmission: string;
-  year: number;
-  drive: string;
-  cityMPG: number;
 }
 
 export interface CustomButtonProps {
