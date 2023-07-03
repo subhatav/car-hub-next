@@ -6,20 +6,16 @@ import { useRouter } from "next/navigation";
 
 import Image from "next/image";
 
-import { updateSearchParams } from "@/utils";
 import { CustomFilterProps } from "@/types";
 
-export default function CustomFilter({ title, options }: CustomFilterProps) {
+export default function CustomFilter({
+  title,
+  options,
+  setFilter,
+}: CustomFilterProps) {
   const [selected, setSelected] = useState(options[0]);
 
   const router = useRouter();
-
-  // Update the URL Search Parameters and navigate to the new URL
-  const handleUpdateParams = (event: { title: string; value: string }) => {
-    const freshPathName = updateSearchParams(title, event.value.toLowerCase());
-
-    router.push(freshPathName);
-  };
 
   return (
     <div className="w-fit">
@@ -27,7 +23,7 @@ export default function CustomFilter({ title, options }: CustomFilterProps) {
         value={selected}
         onChange={(event) => {
           setSelected(event);
-          handleUpdateParams(event);
+          setFilter(event.value);
         }}
       >
         <div className="relative w-fit z-10">
